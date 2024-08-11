@@ -1,0 +1,75 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('Example STEP file'),'2;1');
+FILE_NAME('cube.stp','2024-07-25T12:00:00',('Author'),('Company'),'','STEP-File','');
+FILE_SCHEMA(('AUTOMOTIVE_DESIGN_CC2'));
+ENDSEC;
+
+DATA;
+#1 = CARTESIAN_POINT('', (0.0, 0.0, 0.0));
+#2 = CARTESIAN_POINT('', (1.0, 0.0, 0.0));
+#3 = CARTESIAN_POINT('', (1.0, 1.0, 0.0));
+#4 = CARTESIAN_POINT('', (0.0, 1.0, 0.0));
+#5 = CARTESIAN_POINT('', (0.0, 0.0, 1.0));
+#6 = CARTESIAN_POINT('', (1.0, 0.0, 1.0));
+#7 = CARTESIAN_POINT('', (1.0, 1.0, 1.0));
+#8 = CARTESIAN_POINT('', (0.0, 1.0, 1.0));
+
+#9 = VERTEX_POINT('', #1);
+#10 = VERTEX_POINT('', #2);
+#11 = VERTEX_POINT('', #3);
+#12 = VERTEX_POINT('', #4);
+#13 = VERTEX_POINT('', #5);
+#14 = VERTEX_POINT('', #6);
+#15 = VERTEX_POINT('', #7);
+#16 = VERTEX_POINT('', #8);
+
+#17 = EDGE_CURVE('', #9, #10, #25, .T.);
+#18 = EDGE_CURVE('', #10, #11, #26, .T.);
+#19 = EDGE_CURVE('', #11, #12, #27, .T.);
+#20 = EDGE_CURVE('', #12, #9, #28, .T.);
+#21 = EDGE_CURVE('', #13, #14, #29, .T.);
+#22 = EDGE_CURVE('', #14, #15, #30, .T.);
+#23 = EDGE_CURVE('', #15, #16, #31, .T.);
+#24 = EDGE_CURVE('', #16, #13, #32, .T.);
+#25 = EDGE_CURVE('', #9, #13, #33, .T.);
+#26 = EDGE_CURVE('', #10, #14, #34, .T.);
+#27 = EDGE_CURVE('', #11, #15, #35, .T.);
+#28 = EDGE_CURVE('', #12, #16, #36, .T.);
+
+#37 = ORIENTED_EDGE('', #17, .T.);
+#38 = ORIENTED_EDGE('', #18, .T.);
+#39 = ORIENTED_EDGE('', #19, .T.);
+#40 = ORIENTED_EDGE('', #20, .T.);
+#41 = ORIENTED_EDGE('', #21, .T.);
+#42 = ORIENTED_EDGE('', #22, .T.);
+#43 = ORIENTED_EDGE('', #23, .T.);
+#44 = ORIENTED_EDGE('', #24, .T.);
+#45 = ORIENTED_EDGE('', #25, .T.);
+#46 = ORIENTED_EDGE('', #26, .T.);
+#47 = ORIENTED_EDGE('', #27, .T.);
+#48 = ORIENTED_EDGE('', #28, .T.);
+
+#49 = EDGE_LOOP('', (#37, #38, #39, #40));
+#50 = EDGE_LOOP('', (#41, #42, #43, #44));
+#51 = EDGE_LOOP('', (#45, #46, #47, #48));
+#52 = EDGE_LOOP('', (#37, #41, #43, #48));
+#53 = EDGE_LOOP('', (#38, #42, #45, #47));
+#54 = EDGE_LOOP('', (#39, #44, #46, #48));
+
+#55 = FACE_OUTER_BOUND('', #49, .T.);
+#56 = FACE_OUTER_BOUND('', #50, .T.);
+#57 = FACE_OUTER_BOUND('', #51, .T.);
+#58 = FACE_OUTER_BOUND('', #52, .T.);
+#59 = FACE_OUTER_BOUND('', #53, .T.);
+#60 = FACE_OUTER_BOUND('', #54, .T.);
+
+#61 = ADVANCED_FACE('', (#55), #25, .T.);
+#62 = ADVANCED_FACE('', (#56), #26, .T.);
+#63 = ADVANCED_FACE('', (#57), #27, .T.);
+#64 = ADVANCED_FACE('', (#58), #28, .T.);
+#65 = ADVANCED_FACE('', (#59), #29, .T.);
+#66 = ADVANCED_FACE('', (#60), #30, .T.);
+
+ENDSEC;
+END-ISO-10303-21;
